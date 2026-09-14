@@ -41,7 +41,7 @@
     "prettier": "^3.4.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
+    "@types/node": "^26.5.1",
     "@types/yargs": "^17.0.33",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
