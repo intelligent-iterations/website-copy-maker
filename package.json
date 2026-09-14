@@ -1,0 +1,82 @@
+{
+  "name": "website-copy-maker",
+  "version": "0.2.0",
+  "description": "Provider-neutral tools to capture, copy, and visually evaluate websites, including materialized assets and fonts.",
+  "author": "Intelligent Iterations",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/intelligent-iterations/website-copy-maker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intelligent-iterations/website-copy-maker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/intelligent-iterations/website-copy-maker/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "bin": {
+    "website-copy": "./dist/cli.js"
+  },
+  "scripts": {
+    "website-copy": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit && prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "playwright:install": "playwright install chromium",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "check:instructions": "python3 scripts/check-agent-instructions.py"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "sharp": "^0.35.4",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "yargs": "^17.7.2",
+    "prettier": "^3.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/yargs": "^17.0.33",
+    "@types/pixelmatch": "^5.2.6",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^7.3.6",
+    "vitest": "^4.1.11",
+    "http-server": "^14.1.1"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./next-tailwind": {
+      "types": "./dist/next-tailwind.d.ts",
+      "import": "./dist/next-tailwind.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs/agent-workflow.md",
+    "docs/assets",
+    "docs/demo",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
+  "pnpm": {
+    "overrides": {
+      "nanoid": "3.3.18",
+      "postcss": "8.5.18"
+    }
+  }
+}

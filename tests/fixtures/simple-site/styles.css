@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Fixture Sans";
+  src: url("/fixture-sans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fixture Sans", system-ui, sans-serif;
+  background: #faf8f3;
+  color: #111111;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+}
+
+.nav a {
+  color: #111111;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.hero {
+  padding: 64px 32px;
+  background-image: url("/hero-bg.png");
+  background-size: cover;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: #6f6a62;
+  margin-top: 16px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 24px;
+  background: #f76b4f;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.hero-img {
+  display: block;
+  margin-top: 32px;
+  max-width: 480px;
+  border-radius: 24px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 64px 32px;
+}
+
+.feature {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.footer {
+  padding: 32px;
+  color: #6f6a62;
+}

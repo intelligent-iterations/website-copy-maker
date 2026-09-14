@@ -1,0 +1,35 @@
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# Generated output during dev/testing
+rebuilt-site/
+test-output/
+playwright-report/
+test-results/
+
+# Credentials (none expected, but defensive)
+.env
+.env.*
+*.key
+*.pem
+*.p12
+secrets/
+auth/
+
+# Local Claude config
+CLAUDE.local.md
+AGENTS.local.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Coverage
+coverage/
+.nyc_output/

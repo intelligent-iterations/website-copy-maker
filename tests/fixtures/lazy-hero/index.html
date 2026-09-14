@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lazy Hero Fixture</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      .hero {
+        position: relative;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        padding: 0 80px;
+      }
+      .hero-text { width: 400px; }
+      .hero-text h1 { font-size: 48px; line-height: 1.1; margin: 0 0 12px; }
+      .hero-text p { font-size: 18px; color: #555; margin: 0; }
+      .hero-phone {
+        position: absolute;
+        right: 80px;
+        top: 100px;
+        width: 280px;
+        height: 400px;
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+      }
+      .hero-phone.visible { opacity: 1; }
+      .spacer { height: 1200px; }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>A distinctive hero headline that the integrity gate will recognize.</h1>
+        <p>This subtitle is also long enough to count as a distinctive phrase for the test.</p>
+      </div>
+      <!-- This image uses IntersectionObserver lazy mounting: the <img>
+           starts with a placeholder src and the observer swaps it to the
+           real src + makes it visible only when scrolled into view. With the
+           old extraction pipeline (no scroll-walk) the rect stayed 0 and the
+           image got dropped. -->
+      <img class="hero-phone" data-real-src="/phone.png" src="/transparent.png" alt="Phone" />
+    </section>
+    <div class="spacer"></div>
+    <script>
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            const img = e.target;
+            if (img.dataset.realSrc) {
+              img.src = img.dataset.realSrc;
+              delete img.dataset.realSrc;
+              img.classList.add('visible');
+            }
+          }
+        }
+      }, { rootMargin: '0px', threshold: 0.1 });
+      document.querySelectorAll('.hero-phone').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

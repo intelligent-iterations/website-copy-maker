@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Fixture Site</title>
+    <meta name="description" content="Fixture page used by integration tests." />
+    <meta property="og:title" content="Simple Fixture Site" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="theme-color" content="#FAF8F3" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a href="/" class="logo">FixtureCo</a>
+      <nav>
+        <a href="/features">Features</a>
+        <a href="/pricing">Pricing</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-title">Build the thing.</h1>
+      <p class="hero-sub">A short tagline that describes the product.</p>
+      <a href="/start" class="cta">Get started</a>
+      <img class="hero-img" src="/hero.png" alt="Hero illustration" />
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <h2>Speed</h2>
+        <p>Fast.</p>
+      </article>
+      <article class="feature">
+        <h2>Simplicity</h2>
+        <p>Simple.</p>
+      </article>
+      <article class="feature">
+        <h2>Power</h2>
+        <p>Powerful.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small>&copy; FixtureCo. All rights reserved.</small>
+    </footer>
+
+    <!-- Tracking pixel that should be filtered out by extractDom. -->
+    <img src="/tracking-pixel.gif" width="1" height="1" alt="" />
+
+    <!-- Hidden node that should be filtered out. -->
+    <div style="display: none">hidden</div>
+
+    <script>
+      // Inline script - should be filtered.
+      console.log("hello");
+    </script>
+  </body>
+</html>

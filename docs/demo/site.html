@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form & Field - fictional demo</title>
+    <link rel="stylesheet" href="/site.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">f<span>↗</span>f <small>FORM & FIELD</small></a
+      ><a href="/journal/">Journal ↗</a>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="intro">
+          <p class="eyebrow"><span class="dot"></span> INDEPENDENT BY DESIGN</p>
+          <h1 id="hero-title" class="hero-title" data-source-file="site.css (.hero-title)">
+            Good work.<br />Less noise.
+          </h1>
+          <p class="description">
+            A little space for the things that matter.<br />Thoughtful tools for a more focused day.
+          </p>
+          <button onclick="document.querySelector('dialog').showModal()">
+            Explore the studio <span>↗</span>
+          </button>
+        </div>
+        <div class="poster" role="img" aria-label="Abstract orange and cream geometric shapes">
+          <div class="poster-top"><span>ROOM TO THINK</span><span>01 / 03</span></div>
+          <div class="circle"></div>
+          <div class="square"></div>
+          <div class="arch"></div>
+          <div class="poster-bottom"><span>Less, but better.</span><span>↗</span></div>
+        </div>
+      </section>
+      <section class="principles" aria-label="Our principles">
+        <span><b>01</b> Make room.</span><span><b>02</b> Find focus.</span
+        ><span><b>03</b> Do good work.</span>
+      </section>
+      <section class="note">
+        <p class="eyebrow">A NOTE FROM THE STUDIO</p>
+        <h2>Simple is a practice.</h2>
+        <a href="/journal/">Read the journal ↗</a>
+      </section>
+    </main>
+    <footer><span>FORM & FIELD</span><span>A fictional demonstration site.</span></footer>
+    <dialog>
+      <p class="eyebrow">WELCOME TO THE STUDIO</p>
+      <h2>A little room to think.</h2>
+      <p>This is a real, working dialog in a fictional demo.</p>
+      <button onclick="this.closest('dialog').close()">Back to the page ↗</button>
+    </dialog>
+  </body>
+</html>

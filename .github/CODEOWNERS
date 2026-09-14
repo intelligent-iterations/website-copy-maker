@@ -1,0 +1,11 @@
+# Everything has two public-release owners.
+*                         @luciana-lara @admincoderii
+
+# Security and release boundaries are explicitly self-owned.
+/.github/CODEOWNERS       @luciana-lara @admincoderii
+/.github/                  @luciana-lara @admincoderii
+/packages/                 @luciana-lara @admincoderii
+/CLAUDE.md                 @luciana-lara @admincoderii
+/AGENTS.md                 @luciana-lara @admincoderii
+/.claude/                  @luciana-lara @admincoderii
+/.codex/                   @luciana-lara @admincoderii
